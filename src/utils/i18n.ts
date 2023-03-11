@@ -13,9 +13,9 @@ i18n.translations = { en, fr }
 
 export const changeLocale = (locale: string) => i18n.locale = locale
 export const getCurrentLocale = () => i18n.locale
-export const LocaleContext = React.createContext<{ locale?: string, changeLocale: (value: string) => void }>({
+export const LocaleContext = React.createContext<{ locale: string, changeLocale: (locale: string) => void }>({
   locale: getCurrentLocale(),
-  changeLocale,
+  changeLocale: () => {},
 })
 
 export default i18n.translate.bind(i18n)
