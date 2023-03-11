@@ -13,4 +13,12 @@ import Cypress from '@/assets/svg/cypress.svg'
 // @ts-ignore
 import Eslint from '@/assets/svg/eslint.svg'
 
-export { Icon, Sun, Moon, Tailwind, Redux, Cypress, Eslint }
+export {
+  Icon,
+  Sun,
+  Moon,
+  Tailwind,
+  Redux,
+  Cypress,
+  Eslint
+}

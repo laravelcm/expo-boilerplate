@@ -13,7 +13,3 @@ export const LOCALES = [
     name: "locale.french"
   }
 ]
-
-export const USER_STORAGE_KEY = 'user_token'
-export const STATUS_BAR_HEIGHT = 20;
-export const SAFE_VIEW_AREA_HEIGHT = 44;
