@@ -1,14 +1,18 @@
 {
-  "name": "laravelcmapp",
+  "name": "starter_app",
   "version": "1.0.0",
   "main": "node_modules/expo/AppEntry.js",
+  "private": true,
   "scripts": {
     "start": "expo start",
     "android": "expo start --android",
     "ios": "expo start --ios",
     "web": "expo start --web",
     "build:tailwind": "tailwindcss --input style.css --output tailwind.css --no-autoprefixer && tailwind-rn",
-    "dev:tailwind": "concurrently \"tailwindcss --input style.css --output tailwind.css --no-autoprefixer --watch\" \"tailwind-rn --watch\""
+    "dev:tailwind": "concurrently \"tailwindcss --input style.css --output tailwind.css --no-autoprefixer --watch\" \"tailwind-rn --watch\"",
+    "lint": "eslint './src/**/*{.ts,.tsx}' --ignore-path .gitignore",
+    "lint:fix": "yarn run lint --fix",
+    "prepare": "husky install"
   },
   "dependencies": {
     "concurrently": "^7.6.0",
@@ -32,8 +36,19 @@
     "@types/react": "~18.0.27",
     "@types/react-native": "^0.71.3",
     "babel-plugin-module-resolver": "^5.0.0",
+    "eslint-config-react-native-wcandillon": "^3.9.0",
+    "husky": ">=7",
+    "lint-staged": ">=10",
     "postcss": "^8.4.21",
+    "prettier": "^2.8.4",
     "typescript": "^4.9.4"
   },
-  "private": true
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{css,json,ts,tsx}": "prettier --write"
+  }
 }
