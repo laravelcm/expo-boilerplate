@@ -1,12 +1,16 @@
 import React from 'react'
 import { TailwindProvider } from 'tailwind-rn'
-import Starter from './src/screens/Starter'
-import { LocaleContext , getCurrentLocale, changeLocale as updateLocale } from './src/utils/i18n'
+import type { ColorSchemeName } from 'react-native'
 import { ThemeContext } from '@/utils/theme'
+import Starter from './src/screens/Starter'
+import {
+  LocaleContext,
+  getCurrentLocale,
+  changeLocale as updateLocale,
+} from './src/utils/i18n'
 import utilities from './tailwind.json'
-import { ColorSchemeName } from 'react-native'
 
- const App = () => {
+const App = () => {
   const [theme, setTheme] = React.useState<ColorSchemeName>('light')
   const [locale, setLocale] = React.useState<string>(getCurrentLocale())
 
@@ -26,6 +30,6 @@ import { ColorSchemeName } from 'react-native'
       </ThemeContext.Provider>
     </LocaleContext.Provider>
   )
- }
+}
 
 export default App
